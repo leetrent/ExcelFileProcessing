@@ -1,0 +1,102 @@
+﻿@page
+@model ExcelFileProcessing.Pages.QAShipments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].Matrix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].MatrixClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].FilterLotNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].BufferLotNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].Agent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].Target)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].StockId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].FinalSpikedConcentration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].QAClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].PrepAnalyst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QAShipment[0].PrepDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.QAShipment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matrix)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatrixClass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilterLotNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BufferLotNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Target)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalSpikedConcentration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QAClass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrepAnalyst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrepDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

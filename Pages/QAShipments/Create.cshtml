@@ -1,0 +1,94 @@
+﻿@page
+@model ExcelFileProcessing.Pages.QAShipments.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>QAShipment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="QAShipment.ID" class="control-label"></label>
+                <input asp-for="QAShipment.ID" class="form-control" />
+                <span asp-validation-for="QAShipment.ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.Type" class="control-label"></label>
+                <input asp-for="QAShipment.Type" class="form-control" />
+                <span asp-validation-for="QAShipment.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.Matrix" class="control-label"></label>
+                <input asp-for="QAShipment.Matrix" class="form-control" />
+                <span asp-validation-for="QAShipment.Matrix" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.MatrixClass" class="control-label"></label>
+                <input asp-for="QAShipment.MatrixClass" class="form-control" />
+                <span asp-validation-for="QAShipment.MatrixClass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.FilterLotNumber" class="control-label"></label>
+                <input asp-for="QAShipment.FilterLotNumber" class="form-control" />
+                <span asp-validation-for="QAShipment.FilterLotNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.BufferLotNumber" class="control-label"></label>
+                <input asp-for="QAShipment.BufferLotNumber" class="form-control" />
+                <span asp-validation-for="QAShipment.BufferLotNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.Agent" class="control-label"></label>
+                <input asp-for="QAShipment.Agent" class="form-control" />
+                <span asp-validation-for="QAShipment.Agent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.Target" class="control-label"></label>
+                <input asp-for="QAShipment.Target" class="form-control" />
+                <span asp-validation-for="QAShipment.Target" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.StockId" class="control-label"></label>
+                <input asp-for="QAShipment.StockId" class="form-control" />
+                <span asp-validation-for="QAShipment.StockId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.FinalSpikedConcentration" class="control-label"></label>
+                <input asp-for="QAShipment.FinalSpikedConcentration" class="form-control" />
+                <span asp-validation-for="QAShipment.FinalSpikedConcentration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.QAClass" class="control-label"></label>
+                <input asp-for="QAShipment.QAClass" class="form-control" />
+                <span asp-validation-for="QAShipment.QAClass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.PrepAnalyst" class="control-label"></label>
+                <input asp-for="QAShipment.PrepAnalyst" class="form-control" />
+                <span asp-validation-for="QAShipment.PrepAnalyst" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QAShipment.PrepDate" class="control-label"></label>
+                <input asp-for="QAShipment.PrepDate" class="form-control" />
+                <span asp-validation-for="QAShipment.PrepDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
