@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ExcelFileProcessing.Data;
+using ExcelFileProcessing.Repositories;
 
 namespace ExcelFileProcessing
 {
@@ -29,6 +30,12 @@ namespace ExcelFileProcessing
 
             services.AddDbContext<ExcelFileProcessingContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ExcelFileProcessingContext")));
+
+            ////////////////////////////////////////////////////////////////////////////////////////// 
+            // Register RoleService
+            //////////////////////////////////////////////////////////////////////////////////////////          
+            services.AddScoped<IQAShipmentRepository, QAShipmentRepository>();
+            //////////////////////////////////////////////////////////////////////////////////////////
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

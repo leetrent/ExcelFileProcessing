@@ -7,16 +7,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ExcelFileProcessing.Data;
 using ExcelFileProcessing.Models;
+using ExcelFileProcessing.Repositories;
 
 namespace ExcelFileProcessing.Pages.QAShipments
 {
     public class CreateModel : PageModel
     {
-        private readonly ExcelFileProcessing.Data.ExcelFileProcessingContext _context;
+        private readonly IQAShipmentRepository _repository;
 
-        public CreateModel(ExcelFileProcessing.Data.ExcelFileProcessingContext context)
+        public CreateModel(IQAShipmentRepository repo)
         {
-            _context = context;
+            _repository = repo;
         }
 
         public IActionResult OnGet()
@@ -35,8 +36,7 @@ namespace ExcelFileProcessing.Pages.QAShipments
                 return Page();
             }
 
-            _context.QAShipment.Add(QAShipment);
-            await _context.SaveChangesAsync();
+            await _repository.Create(QAShipment);
 
             return RedirectToPage("./Index");
         }
